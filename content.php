@@ -1,6 +1,6 @@
 <?php
 /**
- * @package DocBlock
+ * @package Slushman 2015
  */
 
 ?><article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -12,7 +12,7 @@
 
 			?><div class="entry-meta"><?php
 
-				function_names_posted_on();
+				slushman_2015_posted_on();
 
 			?></div><!-- .entry-meta --><?php
 
@@ -24,12 +24,12 @@
 
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
-				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'text-domain' ),
+				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'slushman2015' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'text-domain' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'slushman2015' ),
 				'after'  => '</div>',
 			) );
 
@@ -37,7 +37,7 @@
 
 	<footer class="entry-footer"><?php
 
-		function_names_entry_footer();
+		slushman_2015_entry_footer();
 
 	?></footer><!-- .entry-footer -->
 </article><!-- #post-## -->

@@ -4,7 +4,7 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package DocBlock
+ * @package Slushman 2015
  */
 ?>
 
@@ -29,7 +29,7 @@
 				do_action( 'footer_right' );
 
 			?></div><!-- .site-info -->
-		
+
 		</div><!-- .footer-wrap -->
 
 	</footer><!-- #colophon -->

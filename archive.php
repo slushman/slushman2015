@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package DocBlock
+ * @package Slushman 2015
  */
 
 get_header(); ?>

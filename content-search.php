@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package DocBlock
+ * @package Slushman 2015
  */
 ?>
 
@@ -16,7 +16,7 @@
 		if ( 'post' == get_post_type() ) :
 			?><div class="entry-meta"><?php
 
-				function_names_posted_on();
+				slushman_2015_posted_on();
 
 			?></div><!-- .entry-meta --><?php
 
@@ -32,7 +32,7 @@
 
 	<footer class="entry-footer"><?php
 
-		function_names_entry_footer();
+		slushman_2015_entry_footer();
 
 	?></footer><!-- .entry-footer -->
 </article><!-- #post-## -->

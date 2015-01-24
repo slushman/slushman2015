@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
- * @package DocBlock
+ * @package Slushman 2015
  */
 
 /**
@@ -16,7 +16,7 @@
  *
  * @return 	array
  */
-function function_names_body_classes( $classes ) {
+function slushman_2015_body_classes( $classes ) {
 
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
@@ -27,8 +27,8 @@ function function_names_body_classes( $classes ) {
 
 	return $classes;
 
-} // function_names_body_classes()
-add_filter( 'body_class', 'function_names_body_classes' );
+} // slushman_2015_body_classes()
+add_filter( 'body_class', 'slushman_2015_body_classes' );
 
 if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 /**
@@ -44,7 +44,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
  *
  * @return 	string 					The filtered title.
  */
-function function_names_wp_title( $title, $sep ) {
+function slushman_2015_wp_title( $title, $sep ) {
 
 	if ( is_feed() ) { return $title; }
 
@@ -65,14 +65,14 @@ function function_names_wp_title( $title, $sep ) {
 	// Add a page number if necessary:
 	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
 
-		$title .= " $sep " . sprintf( __( 'Page %s', 'text-domain' ), max( $paged, $page ) );
+		$title .= " $sep " . sprintf( __( 'Page %s', 'slushman2015' ), max( $paged, $page ) );
 
 	}
 
 	return $title;
 
-} // function_names_wp_title()
-add_filter( 'wp_title', 'function_names_wp_title', 10, 2 );
+} // slushman_2015_wp_title()
+add_filter( 'wp_title', 'slushman_2015_wp_title', 10, 2 );
 
 	/**
 	 * Title shim for sites older than WordPress 4.1.
@@ -80,10 +80,10 @@ add_filter( 'wp_title', 'function_names_wp_title', 10, 2 );
 	 * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
 	 * @todo Remove this function when WordPress 4.3 is released.
 	 */
-function function_names_render_title() {
+function slushman_2015_render_title() {
 
 	?><title><?php wp_title( '|', true, 'right' ); ?></title><?php
 
-} // function_names_render_title()
-add_action( 'wp_head', 'function_names_render_title' );
+} // slushman_2015_render_title()
+add_action( 'wp_head', 'slushman_2015_render_title' );
 endif;

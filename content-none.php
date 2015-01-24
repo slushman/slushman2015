@@ -4,12 +4,12 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package DocBlock
+ * @package Slushman 2015
  */
 
 ?><section class="no-results not-found">
 	<header class="page-header contentnone">
-		<h1 class="page-title"><?php _e( 'Nothing Found', 'text-domain' ); ?></h1>
+		<h1 class="page-title"><?php _e( 'Nothing Found', 'slushman2015' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content"><?php
@@ -18,7 +18,7 @@
 
 			?><p><?php
 
-				printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'text-domain' ), esc_url( admin_url( 'post-new.php' ) ) );
+				printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'slushman2015' ), esc_url( admin_url( 'post-new.php' ) ) );
 
 			?></p><?php
 
@@ -26,7 +26,7 @@
 
 			?><p><?php
 
-				_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'text-domain' );
+				_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'slushman2015' );
 
 			?></p><?php
 
@@ -36,7 +36,7 @@
 
 			?><p><?php
 
-				_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'text-domain' );
+				_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'slushman2015' );
 
 			?></p><?php
 

@@ -1,10 +1,10 @@
 <?php
 /**
  * Template Name: Sidebar Content
- * 
+ *
  * Description: Page template with sidebar on the left-side
  *
- * @package DocBlock
+ * @package Slushman 2015
  */
 
 get_header(); ?>
@@ -26,5 +26,5 @@ get_header(); ?>
 		?></main><!-- #main -->
 	</div><!-- #primary --><?php
 
-get_sidebar( 'left' ); 
+get_sidebar( 'left' );
 get_footer(); ?>

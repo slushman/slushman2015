@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (not found).
  *
- * @package DocBlock
+ * @package Slushman 2015
  *
  * @link 	http://yoast.com/wordpress-404-error-pages/
  */
@@ -17,7 +17,7 @@
 function martiandliz_strip_attachments( $where ) {
 
 	$where .= ' AND post_type != "attachment"';
- 
+
  	return $where;
 
 }
@@ -38,7 +38,7 @@ get_header();
 			if ( count( $posts ) == 0 ) {
 
 				$posts = query_posts( 'post_type=any&s=' . $s );
-			
+
 			}
 
 			if ( count( $posts ) > 0 ) {
@@ -50,17 +50,17 @@ get_header();
 				foreach ( $posts as $post ) {
 
 					echo '<li><a href="' . get_permalink( $post->ID ).'">' . $post->post_title . '</a></li>';
-				
+
 				}
-				
+
 				echo "</ul>";
 				echo "<p>If not, don't worry, I've got a few more tips for you to find it:</p></li>";
-			
+
 			} else {
-			
+
 				echo "<p><strong>Don't worry though!</strong> I've got a few tips for you to find it:</p>";
 				echo "<ol>";
-			
+
 			}
 
 			?><li>
@@ -71,16 +71,16 @@ get_header();
 			</li>
 			<li>
 				<strong>If you typed in a URL...</strong> make sure the spelling, cApitALiZaTiOn, and punctuation are correct. Then try reloading the page.
-				
+
 			</li>
 			<li>
 				<strong>Look</strong> for it in the <a href="<?php bloginfo( 'siteurl' ); ?>/sitemap/">sitemap</a>.
-				
+
 			</li>
 			<li>
 				<strong>Start over again</strong> at my <a href="<?php bloginfo( 'siteurl' ); ?>">homepage</a> (and please contact me to say what went wrong, so I can fix it).
 			</li>
-		</ol>								
+		</ol>
 
 	</div>
 

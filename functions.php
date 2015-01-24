@@ -1,8 +1,8 @@
 <?php
 /**
- * Replace With Theme Name functions and definitions
+ * Slushman 2015 functions and definitions
  *
- * @package DocBlock
+ * @package Slushman 2015
  */
 
 /**
@@ -12,7 +12,7 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
 }
 
-if ( ! function_exists( 'function_names_setup' ) ) :
+if ( ! function_exists( 'slushman_2015_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -20,15 +20,15 @@ if ( ! function_exists( 'function_names_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function function_names_setup() {
+function slushman_2015_setup() {
 
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on _s, use a find and replace
-	 * to change 'text-domain' to the name of your theme in all the template files
+	 * to change 'slushman2015' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'text-domain', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'slushman2015', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -50,8 +50,8 @@ function function_names_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'text-domain' ),
-		'social' => __( 'Social Links', 'text-domain' )
+		'primary' => __( 'Primary Menu', 'slushman2015' ),
+		'social' => __( 'Social Links', 'slushman2015' )
 	) );
 
 	/*
@@ -71,24 +71,24 @@ function function_names_setup() {
 	) );*/
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'function_names_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'slushman_2015_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
 
-} // function_names_setup()
-endif; // function_names_setup
-add_action( 'after_setup_theme', 'function_names_setup' );
+} // slushman_2015_setup()
+endif; // slushman_2015_setup
+add_action( 'after_setup_theme', 'slushman_2015_setup' );
 
 /**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function function_names_widgets_init() {
+function slushman_2015_widgets_init() {
 
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'text-domain' ),
+		'name'          => __( 'Sidebar', 'slushman2015' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -97,26 +97,26 @@ function function_names_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 
-} // function_names_widgets_init()
-add_action( 'widgets_init', 'function_names_widgets_init' );
+} // slushman_2015_widgets_init()
+add_action( 'widgets_init', 'slushman_2015_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function function_names_scripts() {
+function slushman_2015_scripts() {
 
-	wp_enqueue_style( 'scriptname-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'slushman2015-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'scriptname-navigation', get_template_directory_uri() . '/js/navigation.min.js', array(), '20120206', true );
+	wp_enqueue_script( 'slushman2015-navigation', get_template_directory_uri() . '/js/navigation.min.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'scriptname-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.min.js', array(), '20130115', true );
+	wp_enqueue_script( 'slushman2015-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.min.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-} // function_names_scripts()
-add_action( 'wp_enqueue_scripts', 'function_names_scripts' );
+} // slushman_2015_scripts()
+add_action( 'wp_enqueue_scripts', 'slushman_2015_scripts' );
 
 /**
  * Implement the Custom Header feature.
@@ -157,7 +157,7 @@ add_action( 'footer_left', 'custom_footer_left' );
 
 function custom_site_info() {
 
-	printf( __( '<div class="copyright">All content &copy %1$s <a href="%2$s" title="Login">%3$s</a></a></div>', 'text-domain' ), date( 'Y' ), get_admin_url(), get_bloginfo( 'name' ) );
+	printf( __( '<div class="copyright">All content &copy %1$s <a href="%2$s" title="Login">%3$s</a></a></div>', 'slushman2015' ), date( 'Y' ), get_admin_url(), get_bloginfo( 'name' ) );
 
 } // custom_site_info()
 add_action( 'site_info', 'custom_site_info' );
@@ -203,7 +203,7 @@ function pretty( $input ) {
  *
  * @return 	string 							modified menu
  */
-function function_names_menu_caret( $item_output, $item, $depth, $args ) {
+function slushman_2015_menu_caret( $item_output, $item, $depth, $args ) {
 
 	if ( ! in_array( 'menu-item-has-children', $item->classes ) ) { return $item_output; }
 
@@ -214,8 +214,8 @@ function function_names_menu_caret( $item_output, $item, $depth, $args ) {
 
 	return $output;
 
-} // function_names_menu_caret()
-add_filter( 'walker_nav_menu_start_el', 'function_names_menu_caret', 10, 4 );
+} // slushman_2015_menu_caret()
+add_filter( 'walker_nav_menu_start_el', 'slushman_2015_menu_caret', 10, 4 );
 
 
 
@@ -231,13 +231,13 @@ add_filter( 'walker_nav_menu_start_el', 'function_names_menu_caret', 10, 4 );
  *
  * @return 	string 							modified menu
  */
-function function_names_social_menu_svgs( $item_output, $item, $depth, $args ) {
+function slushman_2015_social_menu_svgs( $item_output, $item, $depth, $args ) {
 
 	if ( 'social' !== $args->theme_location ) { return $item_output; }
 
 	$host 	= parse_url( $item->url, PHP_URL_HOST );
 	$output = '<a href="' . $item->url . '" class="icon-menu">';
-	$class 	= function_names_get_svg_by_class( $item->classes );
+	$class 	= slushman_2015_get_svg_by_class( $item->classes );
 
 	if ( ! empty( $class ) ) {
 
@@ -245,7 +245,7 @@ function function_names_social_menu_svgs( $item_output, $item, $depth, $args ) {
 
 	} else {
 
-		$output .= function_names_get_svg_by_url( $item->url );
+		$output .= slushman_2015_get_svg_by_url( $item->url );
 
 	} // class check
 
@@ -253,8 +253,8 @@ function function_names_social_menu_svgs( $item_output, $item, $depth, $args ) {
 
 	return $output;
 
-} // function_names_social_menu_svgs()
-add_filter( 'walker_nav_menu_start_el', 'function_names_social_menu_svgs', 10, 4 );
+} // slushman_2015_social_menu_svgs()
+add_filter( 'walker_nav_menu_start_el', 'slushman_2015_social_menu_svgs', 10, 4 );
 
 
 /**
@@ -263,13 +263,13 @@ add_filter( 'walker_nav_menu_start_el', 'function_names_social_menu_svgs', 10, 4
  * @param  [type] $url [description]
  * @return [type]      [description]
  */
-function function_names_get_svg_by_class( $classes ) {
+function slushman_2015_get_svg_by_class( $classes ) {
 
 	$output = '';
 
 	foreach ( $classes as $class ) {
 
-		$check = function_names_get_svg( $class );
+		$check = slushman_2015_get_svg( $class );
 
 		if ( ! is_null( $check ) ) { $output .= $check; break; }
 
@@ -277,7 +277,7 @@ function function_names_get_svg_by_class( $classes ) {
 
 	return $output;
 
-} // function_names_get_svg_by_class()
+} // slushman_2015_get_svg_by_class()
 
 /**
  * Gets the appropriate SVG based on a URL
@@ -285,25 +285,25 @@ function function_names_get_svg_by_class( $classes ) {
  * @param  [type] $url [description]
  * @return [type]      [description]
  */
-/*function function_names_get_svg_by_pageID( $ID ) {
+/*function slushman_2015_get_svg_by_pageID( $ID ) {
 
 	$output = '';
 	$page 	= get_post( $ID );
 
 	switch( $page->post_title ) {
 
-		case 'Calendar' 			: $output .= function_names_get_svg( 'calendar' ); break;
-		case 'Camping' 				: $output .= function_names_get_svg( 'camping' ); break;
-		case 'Events & Festivals' 	: $output .= function_names_get_svg( 'calendar' ); break;
-		case 'Hotels' 				: $output .= function_names_get_svg( 'hotel' ); break;
-		case 'Motels' 				: $output .= function_names_get_svg( 'hotel' ); break;
-		case 'Travel Guides' 		: $output .= function_names_get_svg( 'map-location' ); break;
+		case 'Calendar' 			: $output .= slushman_2015_get_svg( 'calendar' ); break;
+		case 'Camping' 				: $output .= slushman_2015_get_svg( 'camping' ); break;
+		case 'Events & Festivals' 	: $output .= slushman_2015_get_svg( 'calendar' ); break;
+		case 'Hotels' 				: $output .= slushman_2015_get_svg( 'hotel' ); break;
+		case 'Motels' 				: $output .= slushman_2015_get_svg( 'hotel' ); break;
+		case 'Travel Guides' 		: $output .= slushman_2015_get_svg( 'map-location' ); break;
 
 	} // switch
 
 	return $output;
 
-} // function_names_get_svg_by_pageID()*/
+} // slushman_2015_get_svg_by_pageID()*/
 
 /**
  * Gets the appropriate SVG based on a URL
@@ -311,25 +311,25 @@ function function_names_get_svg_by_class( $classes ) {
  * @param  [type] $url [description]
  * @return [type]      [description]
  */
-function function_names_get_svg_by_url( $url ) {
+function slushman_2015_get_svg_by_url( $url ) {
 
 	$output = '';
 	$host 	= parse_url( $url, PHP_URL_HOST );
 
 	switch( $host ) {
 
-		case 'facebook.com' 	: $output .= function_names_get_svg( 'facebook' ); break;
-		case 'instagram.com' 	: $output .= function_names_get_svg( 'instagram' ); break;
-		case 'linked.com' 		: $output .= function_names_get_svg( 'linkedin' ); break;
-		case 'pinterest.com' 	: $output .= function_names_get_svg( 'pinterest' ); break;
-		case 'twitter.com' 		: $output .= function_names_get_svg( 'twitter' ); break;
-		case 'youtube.com' 		: $output .= function_names_get_svg( 'youtube' ); break;
+		case 'facebook.com' 	: $output .= slushman_2015_get_svg( 'facebook' ); break;
+		case 'instagram.com' 	: $output .= slushman_2015_get_svg( 'instagram' ); break;
+		case 'linked.com' 		: $output .= slushman_2015_get_svg( 'linkedin' ); break;
+		case 'pinterest.com' 	: $output .= slushman_2015_get_svg( 'pinterest' ); break;
+		case 'twitter.com' 		: $output .= slushman_2015_get_svg( 'twitter' ); break;
+		case 'youtube.com' 		: $output .= slushman_2015_get_svg( 'youtube' ); break;
 
 	} // switch
 
 	return $output;
 
-} // function_names_get_svg_by_url()
+} // slushman_2015_get_svg_by_url()
 
 /**
  * Returns the requested SVG
@@ -338,7 +338,7 @@ function function_names_get_svg_by_url( $url ) {
  *
  * @return 	mixed 					The SVG code
  */
-function function_names_get_svg( $svg ) {
+function slushman_2015_get_svg( $svg ) {
 
 	$output = '';
 
@@ -362,7 +362,7 @@ function function_names_get_svg( $svg ) {
 
 	return $output;
 
-} // function_names_get_svg()
+} // slushman_2015_get_svg()
 
 /**
  * Returns the URL of the featured image
@@ -372,7 +372,7 @@ function function_names_get_svg( $svg ) {
  *
  * @return 	string | bool 				The URL of the featured image, otherwise FALSE
  */
-function function_names_get_thumbnail_url( $postID, $size = 'thumbnail' ) {
+function slushman_2015_get_thumbnail_url( $postID, $size = 'thumbnail' ) {
 
 	if ( empty( $postID ) ) { return FALSE; }
 
@@ -386,7 +386,7 @@ function function_names_get_thumbnail_url( $postID, $size = 'thumbnail' ) {
 
 	return $thumb_array[0];
 
-} // function_names_get_thumbnail_url()
+} // slushman_2015_get_thumbnail_url()
 
 /**
  * Add Themes Options page, if using ACF

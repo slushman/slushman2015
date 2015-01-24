@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package DocBlock
+ * @package Slushman 2015
  */
 ?>
 
@@ -18,7 +18,7 @@
 		the_content();
 
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', 'text-domain' ),
+			'before' => '<div class="page-links">' . __( 'Pages:', 'slushman2015' ),
 			'after'  => '</div>',
 		) );
 
@@ -26,7 +26,7 @@
 
 	<footer class="entry-footer"><?php
 
-		edit_post_link( __( 'Edit', 'text-domain' ), '<span class="edit-link">', '</span>' );
+		edit_post_link( __( 'Edit', 'slushman2015' ), '<span class="edit-link">', '</span>' );
 
 	?></footer><!-- .entry-footer -->
 </article><!-- #post-## -->

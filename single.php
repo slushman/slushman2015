@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package DocBlock
+ * @package Slushman 2015
  */
 
 get_header();

@@ -4,7 +4,7 @@
  *
  * This file is centrally included from `wp-content/mu-plugins/wpcom-theme-compat.php`.
  *
- * @package DocBlock
+ * @package Slushman 2015
  */
 
 /**
@@ -12,13 +12,13 @@
  *
  * @global array $themecolors
  */
-function function_names_wpcom_setup() {
+function slushman_2015_wpcom_setup() {
 
 	global $themecolors;
 
 	// Set theme colors for third party services.
 	if ( ! isset( $themecolors ) ) {
-	
+
 		$themecolors = array(
 			'bg'     => '',
 			'border' => '',
@@ -26,8 +26,8 @@ function function_names_wpcom_setup() {
 			'link'   => '',
 			'url'    => '',
 		);
-	
+
 	}
 
-} // function_names_wpcom_setup()
-add_action( 'after_setup_theme', 'function_names_wpcom_setup' );
+} // slushman_2015_wpcom_setup()
+add_action( 'after_setup_theme', 'slushman_2015_wpcom_setup' );
